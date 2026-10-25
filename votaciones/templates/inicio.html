@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Vallenato 2027 | Votaciones</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #202b3c;
+        }
+
+        header {
+            background: #102b4e;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        header h2 { margin: 0; }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        .hero {
+            padding: 75px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #102b4e, #176b87);
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #f4bd50;
+            color: #17243a;
+            padding: 13px 22px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px #102b4e12;
+            margin-bottom: 20px;
+        }
+
+        .panel h2 { color: #102b4e; }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            background: #102b4e;
+            color: white;
+            margin-top: 40px;
+        }
+
+        
+    <style>
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        color: #202b3c;
+    }
+
+    header {
+        background: #102b4e;
+        color: white;
+        padding: 22px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    header h2 { margin: 0; }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 18px;
+        font-weight: bold;
+    }
+
+    nav form button {
+        cursor: pointer;
+        padding: 8px 12px;
+        border: 0;
+        border-radius: 6px;
+        background: #f4bd50;
+        color: #17243a;
+        font-weight: bold;
+    }
+
+    .hero {
+        padding: 75px 20px;
+        text-align: center;
+        color: white;
+        background: linear-gradient(135deg, #102b4e, #176b87);
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 5vw, 48px);
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 720px;
+        margin: 0 auto 25px;
+    }
+
+    .boton {
+        display: inline-block;
+        background: #f4bd50;
+        color: #17243a;
+        padding: 13px 22px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    main {
+        max-width: 1100px;
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .panel {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px #102b4e12;
+        margin-bottom: 25px;
+    }
+
+    .panel h2 { color: #102b4e; }
+
+    .titulo-seccion {
+        font-size: 29px;
+        margin-bottom: 8px;
+    }
+
+    .subtitulo-seccion {
+        color: #64748b;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .rejilla-categorias {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 22px;
+        margin-top: 24px;
+    }
+
+    .tarjeta-categoria {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 23px;
+        box-shadow: 0 5px 18px rgba(16, 43, 78, 0.07);
+        transition: transform 0.2s, box-shadow 0.2s;
+        overflow-wrap: anywhere;
+    }
+
+    .tarjeta-categoria:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(16, 43, 78, 0.13);
+    }
+
+    .icono-categoria {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        background: #fff3d6;
+        color: #a56b00;
+        font-size: 29px;
+        margin-bottom: 17px;
+    }
+
+    .etiqueta-edicion {
+        display: inline-block;
+        background: #e7f2f7;
+        color: #176b87;
+        border-radius: 20px;
+        padding: 6px 10px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .tarjeta-categoria h3 {
+        color: #102b4e;
+        font-size: 21px;
+        margin: 15px 0 10px;
+    }
+
+    .descripcion-categoria {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .bloque-votacion {
+        border-top: 1px solid #e2e8f0;
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+
+    .bloque-votacion h4 {
+        color: #176b87;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .bloque-votacion p {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .titulo-opciones {
+        font-weight: bold;
+        color: #102b4e !important;
+    }
+
+    .lista-opciones {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 0;
+    }
+
+    .lista-opciones li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #f1f5f9;
+        color: #334155;
+        font-size: 14px;
+    }
+
+    .punto-opcion {
+        flex-shrink: 0;
+        width: 9px;
+        height: 9px;
+        background: #d9a52e;
+        border-radius: 50%;
+        margin-top: 5px;
+    }
+
+    .lista-opciones small {
+        display: block;
+        color: #64748b;
+        margin-top: 5px;
+        line-height: 1.5;
+    }
+
+    .sin-votaciones {
+        color: #64748b;
+        font-size: 14px;
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 24px;
+        background: #102b4e;
+        color: white;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+        header { padding: 20px; }
+        nav a { margin: 5px; display: inline-block; }
+        .hero { padding: 50px 18px; }
+        .panel { padding: 18px; }
+    }
+</style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Festival Vallenato 2027</h2>
+        <nav>
+            <a href="/">Inicio</a>
+            {% if user.is_authenticated %}
+                <span>Hola, {{ user.username }}</span>
+                <form method="post" action="{% url 'logout' %}"
+                      style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Cerrar sesión</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Ingresar</a>
+                <a href="{% url 'registro' %}">Registrarse</a>
+            {% endif %}
+            <a href="/admin/">Administración</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Vive la pasión del vallenato</h1>
+        <p>
+            Bienvenido al sistema web de votaciones del Festival de la
+            Leyenda Vallenata 2027. Explora las categorías y conoce las
+            opciones participantes en esta plataforma.
+        </p>
+        {% if user.is_authenticated %}
+            <a class="boton" href="#categorias">Explorar categorías</a>
+        {% else %}
+            <a class="boton" href="{% url 'registro' %}">Crear cuenta</a>
+            <a class="boton" href="{% url 'login' %}">Iniciar sesión</a>
+        {% endif %}
+    </section>
+
+    <main>
+        
+<section class="panel" id="categorias">
+    <h2>Ediciones del festival</h2>
+
+    {% for edicion in ediciones %}
+        <div style="border-bottom:1px solid #e2e8f0; padding:12px 0;">
+            <h3>{{ edicion.nombre }} ({{ edicion.anio }})</h3>
+            {% if edicion.descripcion %}
+                <p>{{ edicion.descripcion }}</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No hay ediciones activas registradas todavía.</p>
+    {% endfor %}
+</section>
+
+
+<section class="panel" id="categorias">
+    <h2 class="titulo-seccion">Categorías del festival</h2>
+    <p class="subtitulo-seccion">
+        Explora las categorías, conoce sus participantes y consulta
+        las votaciones disponibles.
+    </p>
+
+    <div class="rejilla-categorias">
+        {% for categoria in categorias %}
+            <article class="tarjeta-categoria">
+                <div class="icono-categoria">♫</div>
+
+                <span class="etiqueta-edicion">
+                    {{ categoria.edicion.nombre }}
+                </span>
+
+                <h3>{{ categoria.nombre }}</h3>
+
+                {% if categoria.descripcion %}
+                    <p class="descripcion-categoria">
+                        {{ categoria.descripcion }}
+                    </p>
+                {% else %}
+                    <p class="descripcion-categoria">
+                        Conoce las opciones participantes de esta categoría.
+                    </p>
+                {% endif %}
+
+                {% for votacion in categoria.votaciones.all %}
+                    {% if votacion.activa %}
+                        <div class="bloque-votacion">
+                            <h4>{{ votacion.titulo }}</h4>
+
+                            {% if votacion.descripcion %}
+                                <p>{{ votacion.descripcion }}</p>
+                            {% endif %}
+
+                            <p class="titulo-opciones">Participantes</p>
+
+                            <ul class="lista-opciones">
+                                {% for opcion in votacion.opciones.all %}
+                                    {% if opcion.activa %}
+                                        <li>
+                                            <span class="punto-opcion"></span>
+                                            <span>
+                                                <strong>{{ opcion.nombre }}</strong>
+                                                {% if opcion.descripcion %}
+                                                    <small>{{ opcion.descripcion }}</small>
+                                                {% endif %}
+                                            </span>
+                                        </li>
+                                    {% endif %}
+                                {% empty %}
+                                    <li>Aún no hay opciones registradas.</li>
+                                {% endfor %}
+                            </ul>
+                            
+{% if user.is_authenticated %}
+    <form method="post" action="{% url 'votar' votacion.id %}">
+        {% csrf_token %}
+
+        <p><strong>Selecciona tu participante:</strong></p>
+
+        {% for opcion in votacion.opciones.all %}
+            {% if opcion.activa %}
+                <label style="display:block; padding:8px 0;">
+                    <input
+                        type="radio"
+                        name="opcion"
+                        value="{{ opcion.id }}"
+                        required
+                    >
+                    {{ opcion.nombre }}
+                </label>
+            {% endif %}
+        {% endfor %}
+
+        <button type="submit" class="boton">
+            Registrar mi voto
+        </button>
+    </form>
+{% else %}
+    <p>
+        <a href="{% url 'login' %}">Inicia sesión</a>
+        para participar en esta votación.
+    </p>
+{% endif %}
+
+                        </div>
+                    {% endif %}
+                {% empty %}
+                    <p class="sin-votaciones">
+                        Próximamente se publicarán las votaciones.
+                    </p>
+                {% endfor %}
+            </article>
+        {% empty %}
+            <p class="sin-votaciones">
+                Todavía no hay categorías activas registradas.
+            </p>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+        {% if user.is_authenticated %}
+        <section class="panel">
+            <h2>Tu sesión</h2>
+            <p>Has iniciado sesión como <strong>{{ user.username }}</strong>.</p>
+            <p>La siguiente etapa será consultar las votaciones disponibles.</p>
+        </section>
+        {% endif %}
+    </main>
+    
+{% if messages %}
+    {% for message in messages %}
+        <div class="panel" role="status">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+    <footer>
+        Proyecto académico de Desarrollo Web · Festival Vallenato 2027
+    </footer>
+</body>
+</html>
