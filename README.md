@@ -147,8 +147,8 @@ festival-vallenato-2027/
 ## Integrantes del equipo
 
 - Mateo López Mejía
-- Yair Enrique Orozco Salinas
-- Edison Stiven Cala Amaya
+- Elkin Hernandez
+- Alejandra
 - Sebastián De La Rosa Morelo
 
 ## Repositorio
