@@ -147,8 +147,8 @@ festival-vallenato-2027/
 ## Integrantes del equipo
 
 - Mateo López Mejía
-- Elkin Hernandez
-- Alejandra
+- Elkin Duvan Hernández Medina
+- Maria Alejandra Mendez Quiñones
 - Sebastián De La Rosa Morelo
 
 ## Repositorio
