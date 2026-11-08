@@ -122,8 +122,8 @@ El endpoint GET `/api/categorias/` devuelve información en formato JSON sobre l
 
 - Mateo López Mejía.
 - Sebastián De La Rosa Morelo.
-- Yair Enrique Orozco Salinas.
-- Edison Stiven Cala Amaya.
+- Elkin Duvan Hernandez Medina
+- Maria Alejandra Mendez Quiñones.
 
 ## 10. Evidencias
 
