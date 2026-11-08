@@ -162,6 +162,20 @@ class Voto(models.Model):
         related_name="votos"
     )
 
+    edicion = models.ForeignKey(
+        Edicion,
+        on_delete=models.CASCADE,
+        related_name="votos",
+        
+    )
+
+    categoria = models.ForeignKey(
+        Categoria,
+        on_delete=models.CASCADE,
+        related_name="votos",
+        
+    )
+
     votacion = models.ForeignKey(
         Votacion,
         on_delete=models.CASCADE,
@@ -178,11 +192,14 @@ class Voto(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(
-                fields=["usuario", "votacion"],
-                name="un_voto_por_usuario_votacion"
-            )
-        ]
+        models.UniqueConstraint(
+            fields=["usuario", "categoria", "edicion"],
+            name="un_voto_por_usuario_categoria_edicion"
+        )
+    ]
 
     def __str__(self):
-        return f"{self.usuario} - {self.votacion.titulo} - {self.opcion.nombre}"
+        return (
+            f"{self.usuario} - {self.categoria} - "
+            f"{self.opcion.nombre}"
+        )

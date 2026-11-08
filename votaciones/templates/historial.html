@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi historial de votos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1428;
+            color: white;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .contenedor {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e9bd55;
+        }
+
+        .voto {
+            background: #17243d;
+            border: 1px solid #344563;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .voto h3 {
+            color: #e9bd55;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 20px;
+            color: #e9bd55;
+            text-decoration: none;
+        }
+
+        .vacio {
+            background: #17243d;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>Mi historial de votos</h1>
+
+        <p>Usuario: {{ request.user.username }}</p>
+
+        {% if votos %}
+            {% for voto in votos %}
+                <section class="voto">
+                    <h3>{{ voto.categoria.nombre }}</h3>
+
+                    <p>
+                        <strong>Edición:</strong>
+                        {{ voto.edicion.anio }}
+                    </p>
+
+                    <p>
+                        <strong>Votación:</strong>
+                        {{ voto.votacion.titulo }}
+                    </p>
+
+                    <p>
+                        <strong>Opción seleccionada:</strong>
+                        {{ voto.opcion.nombre }}
+                    </p>
+
+                    <p>
+                        <strong>Fecha del voto:</strong>
+                        {{ voto.fecha|date:"d/m/Y H:i" }}
+                    </p>
+                </section>
+            {% endfor %}
+        {% else %}
+            <div class="vacio">
+                Todavía no has registrado ningún voto.
+            </div>
+        {% endif %}
+
+        <a class="volver" href="{% url 'inicio' %}">
+            ← Volver al inicio
+        </a>
+    </main>
+</body>
+</html>

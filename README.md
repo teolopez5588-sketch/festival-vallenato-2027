@@ -1,168 +1,135 @@
+# Sistema Web de Votaciones – Festival de la Leyenda Vallenata 2027
 
-@'
-# Sistema Web de Votaciones
-## Festival de la Leyenda Vallenata 2027
+**Fundación Universitaria del Área Andina**  
+**Programa:** Desarrollo Web  
+**Proyecto:** Sistema Web de Votaciones  
+**Tecnologías:** Python, Django, MySQL, HTML y CSS.
 
-Proyecto académico desarrollado para la asignatura de Desarrollo Web de la Fundación Universitaria del Área Andina.
+## 1. Descripción del proyecto
 
-El sistema tiene como objetivo permitir la gestión de ediciones, categorías, votaciones y opciones participantes, así como ofrecer una interfaz web para que los usuarios registrados puedan participar en las votaciones habilitadas.
+Sistema web desarrollado con Django y MySQL para gestionar ediciones, categorías, votaciones y participantes del Festival de la Leyenda Vallenata 2027.
 
-## Tecnologías utilizadas
+Los usuarios pueden registrarse, iniciar sesión, consultar las categorías disponibles y emitir sus votos de manera segura.
 
-- **Python:** lenguaje de programación.
-- **Django:** framework web basado en el patrón Modelo-Vista-Plantilla (MVT).
-- **MySQL:** sistema gestor de bases de datos.
-- **HTML y CSS:** estructura y presentación de la interfaz.
-- **Git y GitHub:** control de versiones y alojamiento del código fuente.
+## 2. Funcionalidades principales
 
-## Funcionalidades implementadas
+- Registro e inicio de sesión.
+- Administración de ediciones y categorías.
+- Gestión de votaciones y participantes.
+- Validación de votaciones activas y fechas.
+- Un voto por usuario, categoría y edición.
+- Historial individual de votos.
+- Panel administrativo de Django.
+- API de categorías en formato JSON.
+- Almacenamiento en MySQL.
 
-- Registro de usuarios.
-- Inicio y cierre de sesión.
-- Administración de ediciones, categorías, votaciones y opciones mediante Django Admin.
-- Consulta de categorías y votaciones desde la base de datos.
-- Registro de votos de usuarios autenticados.
-- Restricción para evitar más de un voto por usuario en una misma votación.
-- Validación del estado y del periodo de disponibilidad de las votaciones.
-- Mensajes para informar el resultado de las operaciones.
+## 3. Tecnologías utilizadas
 
-## Requisitos
+- Python 3.13.
+- Django 5.2.
+- MySQL 8.0.
+- HTML5 y CSS3.
+- mysqlclient.
+- python-dotenv.
 
-Antes de ejecutar el proyecto, se necesita:
+## 4. Instalación y configuración
 
-- Python instalado.
-- MySQL Server instalado y en funcionamiento.
-- Git instalado.
-- Una base de datos MySQL llamada `festival_vallenato`.
+### Clonar el repositorio
 
-## Instalación y ejecución en Windows
-
-### 1. Clonar el repositorio
-
-```powershell
+```bash
 git clone https://github.com/teolopez5588-sketch/festival-vallenato-2027.git
 cd festival-vallenato-2027
 ```
 
-### 2. Crear y activar el entorno virtual
+### Crear entorno virtual
+
+```bash
+python -m venv .venv
+```
+
+### Activar entorno virtual en Windows
 
 ```powershell
-python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-Si PowerShell no permite activar el entorno, se puede ejecutar Python directamente desde `.venv\Scripts\python.exe`.
+### Instalar dependencias
 
-### 3. Instalar las dependencias
-
-```powershell
-python -m pip install Django==5.2.18 mysqlclient==2.3.0 python-dotenv
+```bash
+pip install -r requirements.txt
 ```
 
-### 4. Configurar las variables de entorno
+### Configurar variables de entorno
 
-Crear un archivo llamado `.env` en la carpeta principal del proyecto. Este archivo debe contener las variables que utiliza `config/settings.py`.
+Crear un archivo `.env` a partir de `.env.example` y configurar las credenciales locales de MySQL. No publicar contraseñas ni claves secretas.
 
-Ejemplo de configuración local:
-
-```dotenv
-DJANGO_SECRET_KEY=REEMPLAZAR_POR_UNA_CLAVE_SEGURA
-DJANGO_DEBUG=True
-DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
-
-DB_NAME=festival_vallenato
-DB_USER=root
-DB_PASSWORD=TU_CLAVE_LOCAL_DE_MYSQL
-DB_HOST=127.0.0.1
-DB_PORT=3307
-```
-
-Los valores deben coincidir con la configuración del servidor MySQL y con las variables leídas por el proyecto. La clave secreta y la contraseña son ejemplos de configuración: cada instalación debe utilizar sus propios valores.
-
-**Importante:** no publicar el archivo `.env` ni compartir credenciales reales.
-
-### 5. Crear la base de datos
-
-Desde MySQL, crear una base de datos con el nombre configurado:
+### Crear base de datos
 
 ```sql
-CREATE DATABASE festival_vallenato
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE festival_vallenato;
 ```
 
-El usuario configurado debe tener permisos para acceder a esa base de datos.
+### Aplicar migraciones
 
-### 6. Aplicar las migraciones
-
-Desde la carpeta del proyecto, ejecutar:
-
-```powershell
+```bash
 python manage.py migrate
 ```
 
-### 7. Crear un usuario administrador
+### Crear administrador
 
-```powershell
+```bash
 python manage.py createsuperuser
 ```
 
-Seguir las instrucciones de la terminal para crear las credenciales del administrador.
+### Iniciar servidor
 
-### 8. Iniciar el servidor de desarrollo
-
-```powershell
+```bash
 python manage.py runserver
 ```
 
-Abrir en el navegador:
+Abrir: `http://127.0.0.1:8000/`
 
-- **Aplicación:** http://127.0.0.1:8000/
-- **Administración:** http://127.0.0.1:8000/admin/
+## 5. Accesos del sistema
 
-El servidor de desarrollo está destinado a pruebas locales, no a producción.
+- Página principal: `/`
+- Registro: `/registro/`
+- Inicio de sesión: `/login/`
+- Historial de votos: `/historial/`
+- Administración: `/admin/`
+- API: `/api/categorias/`
 
-## Estructura del proyecto
+## 6. Regla de votación
 
-```text
-festival-vallenato-2027/
-├── config/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
-├── votaciones/
-│   ├── migrations/
-│   ├── templates/
-│   ├── admin.py
-│   ├── models.py
-│   ├── urls.py
-│   ├── views.py
-│   └── tests.py
-├── .gitignore
-├── manage.py
-└── README.md
-```
+Un usuario no puede registrar más de un voto en la misma categoría y edición. Puede participar en diferentes categorías.
 
-## Integrantes del equipo
+La integridad se protege mediante validaciones en Django y una restricción única en MySQL sobre los campos usuario, categoría y edición.
 
-- Mateo López Mejía
-- Elkin Duvan Hernández Medina
-- Maria Alejandra Mendez Quiñones
-- Sebastián De La Rosa Morelo
+## 7. API de categorías
 
-## Repositorio
+El endpoint GET `/api/categorias/` devuelve información en formato JSON sobre las categorías activas, sus ediciones, votaciones y opciones disponibles.
 
-Código fuente del proyecto:
+## 8. Seguridad
 
-https://github.com/teolopez5588-sketch/festival-vallenato-2027
+- Autenticación de usuarios.
+- Protección CSRF en formularios.
+- Validación de solicitudes POST.
+- Comprobación de pertenencia de las opciones a cada votación.
+- Validación de fechas y estados activos.
+- Restricción de votos duplicados en la base de datos.
+- Variables de entorno para proteger credenciales.
 
-## Alcance académico
+## 9. Integrantes
 
-Este proyecto corresponde a una implementación académica en desarrollo. La ejecución en otro equipo requiere configurar las dependencias, las variables de entorno y la base de datos. La publicación del código en GitHub no implica que la aplicación esté desplegada en un servidor público.
+- Mateo López Mejía.
+- Sebastián De La Rosa Morelo.
+- Yair Enrique Orozco Salinas.
+- Edison Stiven Cala Amaya.
+
+## 10. Evidencias
+
+Las evidencias de funcionamiento, pruebas funcionales, capturas de pantalla y demostración del sistema se presentan en el documento PDF y en el video de sustentación del proyecto.
 
 ---
-Fundación Universitaria del Área Andina  
-Asignatura: Desarrollo Web  
-Proyecto: Sistema Web de Votaciones – Festival de la Leyenda Vallenata 2027
-'@ | Set-Content -Path README.md -Encoding utf8
+
+**Proyecto académico – Desarrollo Web**  
+**Fundación Universitaria del Área Andina – 2026**

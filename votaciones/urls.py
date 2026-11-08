@@ -5,7 +5,9 @@ from . import views
 
 urlpatterns = [
     path("", views.inicio, name="inicio"),
+
     path("registro/", views.registro, name="registro"),
+
     path(
         "login/",
         auth_views.LoginView.as_view(
@@ -13,10 +15,28 @@ urlpatterns = [
         ),
         name="login"
     ),
-    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+
+    path(
+        "logout/",
+        auth_views.LogoutView.as_view(),
+        name="logout"
+    ),
+
     path(
         "votar/<int:votacion_id>/",
         views.votar,
         name="votar"
+    ),
+
+    path(
+        "historial/",
+        views.historial,
+        name="historial"
+    ),
+
+    path(
+        "api/categorias/",
+        views.api_categorias,
+        name="api_categorias"
     ),
 ]
